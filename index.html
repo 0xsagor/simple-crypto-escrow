@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Escrow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="escrow-card">
+        <div class="header">
+            <div class="icon">🛡️</div>
+            <h1>Smart Escrow</h1>
+        </div>
+
+        <button id="connectBtn">Connect Wallet</button>
+
+        <div class="status-panel">
+            <p>Contract Balance: <span id="balance">0.0</span> ETH</p>
+            <p>Status: <span id="statusText">Waiting...</span></p>
+        </div>
+
+        <div id="controls" class="controls">
+            <div id="buyerControls" class="hidden">
+                <input type="number" id="amountInput" placeholder="ETH Amount">
+                <button id="depositBtn" class="btn-deposit">1. Deposit Funds</button>
+                <button id="releaseBtn" class="btn-release" disabled>2. Release to Seller</button>
+            </div>
+
+            <div id="sellerControls" class="hidden">
+                <p>You are the Seller.</p>
+                <button id="refundBtn" class="btn-refund">Issue Refund</button>
+            </div>
+        </div>
+
+        <div id="logs"></div>
+    </div>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
